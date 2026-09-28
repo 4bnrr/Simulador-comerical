@@ -1,0 +1,568 @@
+/* V21.11 — refinamento visual geral: Início, Empreendimentos e Tabelas */
+
+/* Transição suave das páginas */
+main {
+  animation: pageFadeIn 0.26s ease;
+}
+@keyframes pageFadeIn {
+  from {
+    opacity: 0.72;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- INÍCIO ---------- */
+.hero-refined {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 82% 16%,
+      rgba(239, 0, 20, 0.065),
+      transparent 31%
+    ),
+    linear-gradient(180deg, #f8f9fa 0%, #f4f5f7 100%);
+}
+.hero-refined::after {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  right: -190px;
+  bottom: -240px;
+  border: 54px solid rgba(239, 0, 20, 0.028);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero-grid-refined {
+  position: relative;
+  z-index: 1;
+}
+.hero-refined h1 {
+  max-width: 760px;
+}
+.hero-refined .buttons {
+  margin-top: 32px;
+}
+.hero-refined .btn {
+  min-height: 50px;
+  padding-inline: 21px;
+  border-radius: 12px;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+.hero-refined .btn:hover {
+  transform: translateY(-2px);
+}
+.hero-refined .btn.primary {
+  box-shadow: 0 12px 26px rgba(239, 0, 20, 0.16);
+}
+.hero-card-refined {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 28px 58px rgba(239, 0, 20, 0.2);
+  background: linear-gradient(145deg, #f50016 0%, #d70013 100%);
+}
+.hero-card-refined::after {
+  content: "1";
+  position: absolute;
+  right: -16px;
+  bottom: -72px;
+  font-size: 260px;
+  line-height: 1;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.055);
+  pointer-events: none;
+}
+.hero-card-refined .hero-list {
+  position: relative;
+  z-index: 1;
+}
+.hero-card-refined .hero-list div {
+  transition:
+    padding-left 0.18s ease,
+    background 0.18s ease;
+}
+.hero-card-refined .hero-list div:hover {
+  padding-left: 8px;
+}
+
+.metrics-refined {
+  gap: 22px;
+}
+.metrics-refined .metric {
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 34px rgba(20, 24, 31, 0.055);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+.metrics-refined .metric::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--red), rgba(239, 0, 20, 0.16));
+}
+.metrics-refined .metric:hover {
+  transform: translateY(-4px);
+  border-color: #d9dde2;
+  box-shadow: 0 20px 44px rgba(20, 24, 31, 0.085);
+}
+.metrics-refined .metric strong {
+  font-size: 44px;
+}
+
+/* ---------- EMPREENDIMENTOS ---------- */
+.enterprises-section {
+  background: linear-gradient(180deg, #fff 0%, #fafbfc 100%);
+}
+.enterprise-cards {
+  gap: 22px;
+}
+.enterprise-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 255px;
+  display: flex;
+  flex-direction: column;
+  padding: 27px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fff 0%, #fff 76%, #fbfbfc 100%);
+  box-shadow: 0 12px 32px rgba(20, 24, 31, 0.055);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+.enterprise-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--red), rgba(239, 0, 20, 0.12));
+}
+.enterprise-card:hover {
+  transform: translateY(-5px);
+  border-color: #d7dbe0;
+  box-shadow: 0 22px 46px rgba(20, 24, 31, 0.09);
+}
+.enterprise-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.enterprise-status-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #167348;
+  background: #ecf8f1;
+  border: 1px solid #d3eedf;
+  border-radius: 999px;
+  padding: 6px 9px;
+}
+.enterprise-status-dot::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #21a366;
+}
+.enterprise-card h3 {
+  margin: 18px 0 22px;
+  font-size: 26px;
+  line-height: 1.16;
+}
+.enterprise-price {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 15px 0 18px;
+  border-top: 1px solid #eceef1;
+}
+.enterprise-price small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.enterprise-price strong {
+  font-size: 23px;
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
+}
+.enterprise-detail-btn {
+  width: max-content;
+  min-width: 132px;
+  border-radius: 11px !important;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+.enterprise-detail-btn:hover {
+  transform: translateX(2px);
+}
+.enterprise-detail-btn span {
+  transition: transform 0.18s ease;
+}
+.enterprise-detail-btn:hover span {
+  transform: translateX(3px);
+}
+
+/* ---------- TABELA DE PREÇOS ---------- */
+.prices-section {
+  background: linear-gradient(180deg, #fff 0%, #fbfbfc 100%);
+}
+.price-search-panel {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(360px, 1.2fr);
+  gap: 30px;
+  align-items: center;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(20, 24, 31, 0.05);
+}
+.price-search-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.price-search-copy strong {
+  font-size: 18px;
+  letter-spacing: -0.015em;
+}
+.price-search-copy small {
+  color: var(--muted);
+  line-height: 1.45;
+}
+.price-filters {
+  display: block !important;
+  margin: 0 !important;
+}
+.price-search-input {
+  height: 52px !important;
+  border-radius: 12px !important;
+  font-size: 15px;
+  padding: 0 16px !important;
+  background: #fbfbfc !important;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+.price-search-input:focus {
+  background: #fff !important;
+  box-shadow: 0 0 0 4px rgba(239, 0, 20, 0.07) !important;
+}
+.price-table-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 2px 12px;
+}
+.price-table-head .meta {
+  margin: 0;
+}
+.price-table-caption {
+  color: var(--muted);
+  font-size: 12px;
+}
+.table-wrap-refined {
+  border-radius: 18px !important;
+  box-shadow: 0 14px 34px rgba(20, 24, 31, 0.055);
+  overflow: auto;
+}
+.table-wrap-refined .data-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #f4f5f7;
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+.table-wrap-refined .data-table td {
+  padding-top: 17px;
+  padding-bottom: 17px;
+  transition: background 0.16s ease;
+}
+.table-wrap-refined .data-table tbody tr:nth-child(even) td {
+  background: #fdfdfd;
+}
+.table-wrap-refined > .data-table > tbody > tr:hover > td {
+  background: #fff7f8 !important;
+}
+.table-wrap-refined .price-table td:nth-child(2),
+.table-wrap-refined .price-table td:nth-child(3) {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.table-wrap-refined .price-table .btn {
+  min-width: 108px;
+  border-radius: 10px;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+.table-wrap-refined .price-table .btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Vertex — detalhamento de tipologias por andar dentro da tabela de preços */
+.vertex-detail-row[hidden] {
+  display: none;
+}
+.vertex-detail-row > td {
+  padding: 0 !important;
+  background: #f7f8fa !important;
+}
+.vertex-detail-panel {
+  padding: 18px 22px 22px;
+  border-top: 2px solid var(--red);
+}
+.vertex-detail-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+.vertex-detail-heading small {
+  color: var(--muted);
+}
+.vertex-detail-table-wrap {
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+.vertex-detail-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+}
+.vertex-detail-table th,
+.vertex-detail-table td {
+  padding: 13px 15px !important;
+  text-align: center !important;
+  border-bottom: 1px solid #eceef1;
+}
+.vertex-detail-table th {
+  background: var(--soft);
+  color: #555c66;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.vertex-detail-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.vertex-detail-table tbody tr:hover td {
+  background: #fff7f8 !important;
+}
+
+@media (max-width: 950px) {
+  .price-search-panel {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+@media (max-width: 760px) {
+  .metrics-refined {
+    grid-template-columns: 1fr;
+  }
+  .enterprise-cards {
+    grid-template-columns: 1fr;
+  }
+  .price-table-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  main,
+  .hero-refined .btn,
+  .metrics-refined .metric,
+  .enterprise-card,
+  .enterprise-detail-btn,
+  .table-wrap-refined .price-table .btn {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* V21.12 — Empreendimentos com galeria visual */
+.enterprise-gallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.enterprise-photo-card {
+  padding: 0 !important;
+  min-height: 420px;
+  border-radius: 22px !important;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.enterprise-photo-card::before {
+  display: none !important;
+}
+.enterprise-photo-wrap {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #eceff2, #dfe3e8);
+}
+.enterprise-photo-wrap.image-error::after {
+  content: "Estação 1";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  font-weight: 900;
+  color: #b9bec5;
+}
+.enterprise-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.002);
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.3s ease;
+}
+.enterprise-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 18, 24, 0.02) 36%,
+    rgba(13, 18, 24, 0.64) 100%
+  );
+  pointer-events: none;
+}
+.enterprise-photo-badges {
+  position: absolute;
+  inset: auto 16px 15px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.enterprise-index {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.28);
+}
+.enterprise-photo-card .enterprise-status-dot {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-color: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+}
+.enterprise-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px 22px 24px;
+}
+.enterprise-photo-card h3 {
+  margin: 0 0 18px;
+  font-size: 24px;
+  min-height: 56px;
+}
+.enterprise-photo-card .enterprise-price {
+  margin-top: auto;
+  padding: 14px 0 18px;
+}
+.enterprise-photo-card .enterprise-price strong {
+  font-size: 25px;
+}
+.enterprise-photo-card .enterprise-detail-btn {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.enterprise-photo-card:hover .enterprise-photo {
+  transform: scale(1.055);
+  filter: saturate(1.04) contrast(1.02);
+}
+.enterprise-photo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 54px rgba(20, 24, 31, 0.13);
+}
+@media (max-width: 1100px) {
+  .enterprise-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .enterprise-gallery {
+    grid-template-columns: 1fr;
+  }
+  .enterprise-photo-wrap {
+    height: 220px;
+  }
+  .enterprise-photo-card h3 {
+    min-height: 0;
+  }
+}
+
+/* V21.15 — novos empreendimentos automáticos com fallback seguro */
+.enterprise-auto-note {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  margin: -6px 0 14px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #f4f5f7;
+  border: 1px solid #e6e8eb;
+  color: #6f747a;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.015em;
+}
+.enterprise-auto-note::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #ef0014;
+}

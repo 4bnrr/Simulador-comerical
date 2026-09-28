@@ -1,0 +1,71 @@
+/* V21.5 — cards financeiros 2x2 + botão de impressão em destaque */
+.sim-result-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  margin-top: 14px;
+}
+
+.sim-result-grid > div {
+  padding: 16px 18px !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  background: #fff;
+  min-height: 86px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sim-result-grid > div:nth-child(n) {
+  border-right: 1px solid var(--line) !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+
+.sim-result-grid small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.sim-result-grid b {
+  font-size: 19px;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.sim-print-main-btn {
+  background: var(--red) !important;
+  border-color: var(--red) !important;
+  color: #fff !important;
+  min-height: 52px;
+  padding: 0 24px !important;
+  font-weight: 800;
+  box-shadow: 0 8px 22px rgba(239, 0, 20, 0.16);
+}
+
+.sim-print-main-btn:hover {
+  background: var(--red-dark) !important;
+  border-color: var(--red-dark) !important;
+}
+
+.sim-results-actions {
+  align-items: flex-end !important;
+}
+
+@media (max-width: 700px) {
+  .sim-result-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .sim-results-actions {
+    align-items: stretch !important;
+  }
+  .sim-print-main-btn {
+    width: 100%;
+  }
+}
+

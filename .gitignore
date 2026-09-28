@@ -1,0 +1,25 @@
+.next
+dist-server
+dist-tests
+.npm-cache
+node_modules
+coverage
+.env.local
+.env
+
+# Dados locais e respostas da API do CVCRM
+data/backups/
+data/uploads/
+data/cache.json
+data/cvcrm-integrity.json
+data/cvcrm-rate-limit.json
+data/history.json
+data/materials.json
+data/price-history.json
+data/raw-cvcrm-last.json
+data/raw-tabelas-detalhadas-last.json
+
+# Arquivos locais do TypeScript e sistema operacional
+*.tsbuildinfo
+.DS_Store
+Thumbs.db

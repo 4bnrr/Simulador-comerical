@@ -1,0 +1,176 @@
+/* V22.1 — ajustes solicitados */
+.metrics-dashboard {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.home-sync-bar {
+  margin-top: 22px;
+  margin-bottom: 0;
+}
+.sim-result-card {
+  position: relative;
+  padding-bottom: 74px;
+}
+.sim-result-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #f4f5f7;
+  color: #6b7078;
+  font-size: 11px;
+  font-weight: 800;
+}
+.sim-compare-bottom {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+  cursor: pointer;
+}
+.sim-compare-bottom input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--red);
+}
+.admin-login-wrap {
+  min-height: 55vh;
+  display: grid;
+  place-items: center;
+}
+.admin-login-card {
+  width: min(430px, 100%);
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(20, 24, 31, 0.08);
+}
+.admin-login-card h2 {
+  margin: 6px 0 8px;
+}
+.admin-login-card p {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+.admin-login-card .field {
+  margin-bottom: 14px;
+}
+.admin-login-card .btn {
+  width: 100%;
+  margin-top: 4px;
+}
+.admin-login-error {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fff0f1;
+  color: #b90011;
+  font-size: 12px;
+  font-weight: 700;
+}
+@media (max-width: 1050px) {
+  .metrics-dashboard {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 760px) {
+  .metrics-dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* V22.2 — cards principais lado a lado + CVCRM discreto abaixo */
+.metrics-dashboard {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch;
+}
+.metrics-dashboard .metric {
+  min-height: 185px;
+}
+.home-sync-subtle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 9px 4px 0;
+  border-top: 1px solid #eceff2;
+  color: #7a8088;
+  font-size: 11px;
+}
+.home-sync-subtle > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+.home-sync-subtle b {
+  color: #4f555d;
+  font-weight: 700;
+}
+.home-sync-subtle a {
+  color: #7a8088;
+  text-decoration: none;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.home-sync-subtle a:hover {
+  color: var(--red);
+}
+.home-sync-subtle .status-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+}
+@media (max-width: 1050px) {
+  .metrics-dashboard {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 760px) {
+  .metrics-dashboard {
+    grid-template-columns: 1fr !important;
+  }
+  .home-sync-subtle {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* V22.4 — restaura alinhamento dos 3 indicadores */
+.home-dashboard .metrics-dashboard {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+.home-dashboard .metrics-dashboard .metric {
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 185px !important;
+  margin: 0 !important;
+}
+.home-dashboard .metrics-dashboard .metric:nth-child(n) {
+  grid-column: auto !important;
+}
+.home-dashboard .home-sync-bar,
+.home-dashboard .home-sync-subtle {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  .home-dashboard .metrics-dashboard {
+    grid-template-columns: 1fr !important;
+  }
+}
+

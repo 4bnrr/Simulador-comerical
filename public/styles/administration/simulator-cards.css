@@ -1,0 +1,193 @@
+/* V22.12 — Simulador refinado: cards comerciais mais leves e premium */
+.sim-results-below .sim-result-list {
+  gap: 20px;
+}
+.sim-results-below .sim-result-card {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  padding-bottom: 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(17, 24, 39, 0.055);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+.sim-results-below .sim-result-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--red);
+}
+.sim-results-below .sim-result-card:hover {
+  transform: translateY(-2px);
+  border-color: #d7dbe0;
+  box-shadow: 0 14px 38px rgba(17, 24, 39, 0.085);
+}
+.sim-results-below .sim-result-top {
+  margin: 0;
+  padding: 22px 24px 18px 28px;
+  align-items: center;
+  border-bottom: 1px solid #eef0f2;
+  background: linear-gradient(180deg, #fff 0%, #fdfdfd 100%);
+}
+.sim-results-below .sim-result-top > div:first-child {
+  min-width: 0;
+}
+.sim-results-below .sim-result-index {
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #8a9098;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+}
+.sim-results-below .sim-result-top h3 {
+  margin: 7px 0 0;
+  font-size: 20px;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  color: #1b1e23;
+}
+.sim-results-below .sim-result-entry-highlight {
+  min-width: 170px;
+  padding: 0;
+  background: transparent;
+  color: var(--ink);
+  border-radius: 0;
+  text-align: right;
+}
+.sim-results-below .sim-result-entry-highlight small {
+  color: #8a9098 !important;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+.sim-results-below .sim-result-entry-highlight strong {
+  margin-top: 5px;
+  color: var(--red) !important;
+  font-size: 27px !important;
+  letter-spacing: -0.035em;
+}
+.sim-results-below .sim-result-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0;
+  margin: 0 24px 0 28px;
+  border: 0;
+  border-radius: 0;
+  background: #fff;
+  overflow: visible;
+}
+.sim-results-below .sim-result-grid > div {
+  min-height: 72px;
+  padding: 16px 18px 15px 0;
+  border: 0 !important;
+  border-bottom: 1px solid #eef0f2 !important;
+}
+.sim-results-below .sim-result-grid > div:nth-child(even) {
+  padding-left: 20px;
+  border-left: 1px solid #eef0f2 !important;
+}
+.sim-results-below .sim-result-grid small {
+  margin-bottom: 6px;
+  color: #8a9098;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+}
+.sim-results-below .sim-result-grid b {
+  font-size: 15px;
+  font-weight: 750;
+  color: #25292f;
+  font-variant-numeric: tabular-nums;
+}
+.sim-results-below .sim-warning,
+.sim-results-below .sim-ok {
+  margin: 16px 24px 0 28px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 11px;
+  line-height: 1.45;
+  border: 1px solid transparent;
+}
+.sim-results-below .sim-ok {
+  background: #f3faf6;
+  border-color: #dcefe4;
+  color: #397057;
+}
+.sim-results-below .sim-warning {
+  background: #fffaf0;
+  border-color: #f3e6c9;
+  color: #806127;
+}
+.sim-results-below .sim-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 18px 24px 0 28px;
+  padding: 16px 0 18px;
+  border-top: 1px solid #eef0f2;
+}
+.sim-results-below .sim-card-actions .btn {
+  min-height: 38px;
+  padding: 8px 14px;
+  border-radius: 9px;
+  box-shadow: none;
+}
+.sim-results-below .sim-compare-option {
+  margin-left: auto;
+  padding: 7px 10px;
+  border-radius: 9px;
+  color: #686e77;
+  font-size: 10px;
+  transition:
+    background 0.16s ease,
+    color 0.16s ease;
+}
+.sim-results-below .sim-compare-option:hover {
+  background: #f5f6f8;
+  color: #25292f;
+}
+.sim-results-below .sim-compare-option input {
+  width: 16px;
+  height: 16px;
+}
+@media (max-width: 700px) {
+  .sim-results-below .sim-result-top {
+    align-items: flex-start;
+    padding: 20px 20px 16px 24px;
+  }
+  .sim-results-below .sim-result-entry-highlight {
+    width: auto;
+    min-width: 0;
+    text-align: left;
+  }
+  .sim-results-below .sim-result-grid {
+    grid-template-columns: 1fr !important;
+    margin: 0 20px 0 24px;
+  }
+  .sim-results-below .sim-result-grid > div,
+  .sim-results-below .sim-result-grid > div:nth-child(even) {
+    padding: 14px 0;
+    border-left: 0 !important;
+    border-bottom: 1px solid #eef0f2 !important;
+  }
+  .sim-results-below .sim-warning,
+  .sim-results-below .sim-ok,
+  .sim-results-below .sim-card-actions {
+    margin-left: 24px;
+    margin-right: 20px;
+  }
+}

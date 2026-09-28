@@ -1,0 +1,283 @@
+:root {
+  --red: #ed0016;
+  --ink: #141b22;
+  --muted: #66717d;
+  --line: #dfe4e9;
+  --soft: #f5f7f9;
+  --green: #18723c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #f4f6f8;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.shell {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.topbar {
+  border-bottom: 1px solid #e5e8eb;
+  background: #fff;
+}
+
+.brand {
+  display: flex;
+  min-height: 74px;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand small {
+  margin-top: 3px;
+  color: var(--muted);
+}
+
+.page-heading {
+  padding: 48px 0 34px;
+  background: #fff;
+}
+
+.page-heading h1 {
+  margin: 8px 0;
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: -0.045em;
+}
+
+.page-heading p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.eyebrow {
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 22px;
+  padding: 30px 0 60px;
+}
+
+.panel {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(30, 40, 50, 0.06);
+}
+
+.section-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.section-title h2 {
+  margin: 5px 0 0;
+  font-size: 24px;
+}
+
+.safe-badge,
+.status-ok,
+.status-error {
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.safe-badge {
+  background: #fff0f1;
+  color: var(--red);
+}
+
+.status-ok {
+  background: #eaf7ef;
+  color: var(--green);
+}
+
+.status-error {
+  background: #fff0f1;
+  color: var(--red);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.field span {
+  color: #4f5963;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.field input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 13px;
+  border: 1px solid #d9dfe5;
+  border-radius: 11px;
+  color: var(--ink);
+  outline: none;
+}
+
+.field input:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(237, 0, 22, 0.09);
+}
+
+.result-panel {
+  align-self: start;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.metric {
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #fafbfc;
+}
+
+.metric span,
+.metric strong {
+  display: block;
+}
+
+.metric span {
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.metric strong {
+  font-size: 20px;
+}
+
+.metric.highlight {
+  border-color: #f1c4c8;
+  background: #fff5f6;
+}
+
+.metric.highlight strong {
+  color: var(--red);
+}
+
+.schedule-summary {
+  display: grid;
+  gap: 5px;
+  margin: 18px 0;
+  padding: 15px;
+  border-radius: 13px;
+  background: var(--soft);
+}
+
+.schedule-summary span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.action-button {
+  position: relative;
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--green);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 900;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.action-button:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 9px 20px rgba(24, 114, 60, 0.2);
+}
+
+.action-button.loading {
+  cursor: wait;
+  opacity: 0.8;
+}
+
+.simulation-message {
+  margin: 13px 0 0;
+  padding: 12px;
+  border: 1px solid #c9e8d5;
+  border-radius: 11px;
+  background: #effaf3;
+  color: #266344;
+  font-size: 13px;
+}
+
+@media (max-width: 850px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .shell {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .form-grid,
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 19px;
+  }
+
+  .section-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
